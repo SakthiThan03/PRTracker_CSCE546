@@ -6,11 +6,12 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "workouts")
 data class WorkoutEntity(
     @PrimaryKey(autoGenerate = true)
-    val id: Int = 0,
+    val id: Long = 0,
 
     val name: String,
     val sets: Int,
     val reps: Int,
-    val weight: Float
-      val createdAt: Long = System.currentTimeMillis()
+    val weight: Float,
+    // Timestamp in milliseconds — used for date grouping and ordering
+    val createdAt: Long = System.currentTimeMillis()
 )
